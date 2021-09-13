@@ -179,7 +179,7 @@ if __name__ == "__main__":
         Sampling
     """
     samples = vae_model.sample(25)
-    save_image(recons_datas.view(32, 3, 32, 32)[:25], "Standard_VAE_Sampling.png",
+    save_image(samples.view(32, 3, 32, 32)[:25], "Standard_VAE_Sampling.png",
                nrow=5, normalize=True)
 
 
