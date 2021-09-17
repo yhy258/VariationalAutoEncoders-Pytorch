@@ -1,11 +1,13 @@
 # VariationalAutoEncoders-Pytorch
   
 ## Standard VAE
+paper : https://arxiv.org/abs/1312.6114  
 Model : https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/standard_vae.py
   
 설명 :
 https://deepseow.tistory.com/38  
 https://deepseow.tistory.com/39  
+https://deepseow.tistory.com/40  
   
 후기 :  
 개인적인 경험에 의하면 Reconstruction Loss 작성 시 Tanh + MSELoss보다 Sigmoid + BCELoss가 더 작동을 잘했다.  
@@ -18,3 +20,25 @@ https://deepseow.tistory.com/39
 ![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Reconstruction.png?raw=true)  
 Sampling 좌측, Reconstruction 우측. 100epoch 실험. Sampling이 다소 흐리다.  
 이 결과는 훈련이 다소 부족했는듯. 학부생이라 자원이 부족해서 돌리기가 힘들다. 그리고 GAN보다는 확실히 좀 blur한 결과.
+  
+  
+## Beta VAE
+paper : https://openreview.net/forum?id=Sy2fzU9gl, https://arxiv.org/abs/1804.03599  
+Model : https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/beta_VAE.py  
+Analyze : https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/beta_vae_analyze.py  
+  
+후기 :  
+첫 beta vae가 제안된 논문을 읽어보면 뭔가 불분명했지만, Understanding paper를 읽은 후 InfoGAN과 비슷하게 상호정보량을 통해 어느정도 이해가 되었고 이를 기반으로 더 나은 방법인 weight를 linear하게 높이는 방법을 알게 되었다.  
+이렇게 단순히 KL Divergence Term에 weight를 붙이는 것 만으로도 Disentangle하게 할 수 있다니.. 하지만 논문을 읽어도 이는 다소 휴리스틱하게 느껴졌다.  
+  
+실험 결과  
+![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/latent32_beta_vae_recons.png?raw=true) 
+![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/latent32_beta_vae_sampling.png?raw=true)  
+좌측 이미지 Reconstruction, 우측 이미지 Sampling  
+데이터 셋의 크기가 커서 30 epoch에도 많은 iteration 돌았음. 그리고 개인적인 생각으로 CelebA dataset에 대한 모델을 다소 간단하게 구성해서 blur가 더 심하지 않나 라는 생각을 한다.  
+  
+이 부분은 disentagle의 분석 부분이다.  
+![BetaAnalyze](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/smilewoman.png?raw=true)  
+Analyze는 간단하게 진행했다. 웃는 여자, 웃지 않는 여자 사진에 대한 latent를 빼서 smile latent 구성 (average)  
+이를 smile factor로 두고 linear하게 factor 크기를 높여주면서 이미지 변화 확인  
+disentangle!  
