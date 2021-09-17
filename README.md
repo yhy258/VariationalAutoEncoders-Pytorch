@@ -16,9 +16,9 @@ https://deepseow.tistory.com/40
 그리고 Posterior Collapse가 일어나곤한다.  
   
 **실험 결과**  
-![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Sampling.png?raw=true)
 ![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Reconstruction.png?raw=true)  
-Sampling 좌측, Reconstruction 우측. 100epoch 실험. Sampling이 다소 흐리다.  
+![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Sampling.png?raw=true)
+Reconstruction 우측, Sampling 좌측. 100epoch 실험. Sampling이 다소 흐리다.  
 이 결과는 훈련이 다소 부족했는듯. 학부생이라 자원이 부족해서 돌리기가 힘들다. 그리고 GAN보다는 확실히 좀 blur한 결과.
   
   
@@ -36,6 +36,12 @@ Analyze : https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/
 ![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/latent32_beta_vae_sampling.png?raw=true)  
 좌측 이미지 Reconstruction, 우측 이미지 Sampling  
 데이터 셋의 크기가 커서 30 epoch에도 많은 iteration 돌았음. 그리고 개인적인 생각으로 CelebA dataset에 대한 모델을 다소 간단하게 구성해서 blur가 더 심하지 않나 라는 생각을 한다.  
+blur에 대한 이유는 이 뿐만 아니라 논문에서도 나와있듯이, latent vector의 size가 어떻냐에도 달려있다.  
+![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/beta_VAE_latent_10_reconstruction.png?raw=true)
+![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/beta_VAE_latent_10_Sampling.png?raw=true)  
+이 결과는 10 latent size를 갖는 경우의 결과이다. 위와 동일하게 30epoch 정도 훈련 시켰다. 비교적 선명해보인다.  
+
+
   
 **분석**  
 이 부분은 disentagle의 분석 부분이다.  
