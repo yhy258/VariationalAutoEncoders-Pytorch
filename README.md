@@ -35,7 +35,7 @@ Analyze : https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/
 ![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/latent32_beta_vae_recons.png?raw=true) 
 ![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/latent32_beta_vae_sampling.png?raw=true)  
 좌측 이미지 Reconstruction, 우측 이미지 Sampling  
-데이터 셋의 크기가 커서 30 epoch에도 많은 iteration 돌았음. 그리고 개인적인 생각으로 CelebA dataset에 대한 모델을 다소 간단하게 구성해서 blur가 더 심하지 않나 라는 생각을 한다.  
+데이터 셋의 크기가 커서 64 batch size, 30 epoch에도 많은 iteration 돌았음. 그리고 개인적인 생각으로 CelebA dataset에 대한 모델을 다소 간단하게 구성해서 blur가 더 심하지 않나 라는 생각을 한다.  
 blur에 대한 이유는 이 뿐만 아니라 논문에서도 나와있듯이, latent vector의 size가 어떻냐에도 달려있다.  
 ![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/beta_VAE_latent_10_reconstruction.png?raw=true)
 ![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/beta_VAE_latent_10_Sampling.png?raw=true)  
