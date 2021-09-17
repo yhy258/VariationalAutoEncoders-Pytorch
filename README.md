@@ -16,8 +16,8 @@ https://deepseow.tistory.com/40
 그리고 Posterior Collapse가 일어나곤한다.  
   
 **실험 결과**  
-![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Reconstruction.png?raw=true)  
-![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Sampling.png?raw=true)
+![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Reconstruction.png?raw=true)
+![Sampling](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/Standard_VAE_bce2_Sampling.png?raw=true)  
 Reconstruction 우측, Sampling 좌측. 100epoch 실험. Sampling이 다소 흐리다.  
 이 결과는 훈련이 다소 부족했는듯. 자원이 부족해서 돌리기가 힘들었다. 그리고 GAN보다는 확실히 좀 blur한 결과.
   
