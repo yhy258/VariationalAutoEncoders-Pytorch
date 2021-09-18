@@ -49,3 +49,23 @@ blur에 대한 이유는 이 뿐만 아니라 논문에서도 나와있듯이, l
 Analyze는 간단하게 진행했다. 웃는 여자, 웃지 않는 여자 사진에 대한 latent를 빼서 smile latent 구성 (average)  
 이를 smile factor로 두고 linear하게 factor 크기를 높여주면서 이미지 변화 확인  
 disentangle!  
+
+
+## VQ(Vector Quantization) VAE
+paper : https://arxiv.org/pdf/1711.00937.pdf  
+Model : https://github.com/yhy258https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/vq_vae.pyVariationalAutoEncoders-Pytorch/blob/master/vq_vae.py  
+
+**설명** :  
+https://deepseow.tistory.com/41  
+  
+**후기** :  
+논문에 Vector Quantization 기법이 뭔지 자세히 안나와있어서 이해하는데 꽤나 고생했다. 결국 미리 짜여져 있는 코드를 기반으로 공부해나가면서 코드를 짰다.  
+지금까지 딥러닝을 사용한 컴퓨터 비전을 공부해오면서 Vector Quantization이라는 개념을 한번도 본 적이 없었는데, 새로운 개념을 배우게 되어서 성장한 기분이 들었다 :)  
+레퍼런스 한 깃허브 : https://github.com/zalandoresearch/pytorch-vq-vae  
+레퍼런스 했기 때문에 위 코드와 상당히 비슷. 그리고 EMA 기법에 있어서 laplace smoothing 과 같은 기법이 추가로 사용되었다.  
+주의해야 할 점 : 본 코드는 PixelCNN을 이용한 autoregressive 형태의 샘플링은 제외했다.  
+  
+**실험 결과**  
+![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/VQ_VAE_Reconstruction.png?raw=true)  
+위 사진은 VQ-VAE를 이용한 Reconstruction 결과이다. vae 결과들보다 더 좋은 결과를 내놓음을 한눈에 알 수 있었다.  
+
