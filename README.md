@@ -53,7 +53,7 @@ disentangle!
 
 ## VQ(Vector Quantization) VAE
 paper : https://arxiv.org/pdf/1711.00937.pdf  
-Model : https://github.com/yhy258https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/vq_vae.pyVariationalAutoEncoders-Pytorch/blob/master/vq_vae.py  
+Model : https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/vq_vae.py  
 
 **설명** :  
 https://deepseow.tistory.com/41  
