@@ -65,7 +65,8 @@ https://deepseow.tistory.com/41
 레퍼런스 했기 때문에 위 코드와 상당히 비슷. 그리고 EMA 기법에 있어서 laplace smoothing 과 같은 기법이 추가로 사용되었다.  
 주의해야 할 점 : 본 코드는 PixelCNN을 이용한 autoregressive 형태의 샘플링은 제외했다.  
 샘플링 시 훈련된 Embedding space에 대해 PixelCNN을 Fitting하고 해당 PixelCNN 모델을 통해 latent를 모델링 하여 latent 가지고 이미지를 생성하면된다.  
-나중에 Autoregressive model 부분 공부할 때 VQ VAE Sampling 부분도 만들겠음. (VAE -> Flow -> Autoregressive 순 예정)  
+여기에서 의문이 들었던 점은 Embedding space에 대해 PixelCNN을 어떻게 fitting 하느냐였는데, 열심히 찾아서 봐본 결과 우선, VQVAE를 훈련시켰던 데이터셋을 가지고 encoding을 통해 latents를 뽑아 낸 후 해당 Latents를 가지고 PixelCNN을 훈련시킨다. 이후 훈련 PixelCNN을 가지고 Autoregressive한 과정을 통해 어떤 feature map (latents) 만들어 낸 후 이걸 가지고 decoder로 넣어서 샘플링한다.
+
   
 **실험 결과**  
 ![Reconstruction](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/VQ_VAE_Reconstruction.png?raw=true)  
