@@ -44,11 +44,10 @@ blur에 대한 이유는 이 뿐만 아니라 논문에서도 나와있듯이, l
 
   
 **분석**  
-이 부분은 disentagle의 분석 부분이다.  
+이 부분은 representation 분석 부분이다.  
 ![BetaAnalyze](https://github.com/yhy258/VariationalAutoEncoders-Pytorch/blob/master/Images/smilewoman.png?raw=true)  
 Analyze는 간단하게 진행했다. 웃는 여자, 웃지 않는 여자 사진에 대한 latent를 빼서 smile latent 구성 (average)  
 이를 smile factor로 두고 linear하게 factor 크기를 높여주면서 이미지 변화 확인  
-disentangle!  
 
 
 ## VQ(Vector Quantization) VAE
